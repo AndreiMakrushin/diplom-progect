@@ -1,0 +1,23 @@
+{
+  "name": "diplom",
+  "version": "1.0.0",
+  "description": "my diplom progect",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndreiMakrushin/diplom-progect.git"
+  },
+  "author": "Андрей Макрушин",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndreiMakrushin/diplom-progect/issues"
+  },
+  "homepage": "https://github.com/AndreiMakrushin/diplom-progect#readme",
+  "devDependencies": {
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  }
+}
