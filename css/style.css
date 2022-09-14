@@ -1188,6 +1188,15 @@ video#video_background {
 	-moz-transform: scale(1.2);
 	-o-transform: scale(1.2);
 }
+.carousel{
+	display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.services-carousel{
+	max-height: 450px;
+	overflow: hidden;
+}
 .services-elements .title-h5 {
 	overflow: hidden;
 	position: relative;
