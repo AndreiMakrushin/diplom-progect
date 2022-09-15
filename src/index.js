@@ -5,6 +5,7 @@ import smooth from "./modules/smooth"
 import accordeon from "./modules/accordion"
 import sendFrom from "./modules/sendForm"
 import validate from "./modules/validate"
+import servicesCarousel from "./modules/servicesCarousel"
 modal();
 anchorLink();
 slider();
@@ -12,3 +13,4 @@ smooth();
 accordeon();
 sendFrom({idForm: 'form1'});
 validate();
+servicesCarousel()
