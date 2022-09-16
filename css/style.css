@@ -954,15 +954,12 @@ video#video_background {
 		position: relative;
 	}
 	.top-slider .table {
-		opacity: 0;
-		visibility: hidden;
-		-webkit-transform: scale(1.5);
-		-ms-transform: scale(1.5);
-		-o-transform: scale(1.5);
-		transform: scale(1.5);
-		-webkit-transition: 0.5s;
-		-o-transition: 0.5s;
-		transition: 0.5s;
+		webkit-transform: scale(1);
+		-ms-transform: scale(1);
+		-o-transform: scale(1);
+		transform: scale(1);
+		opacity: 1;
+		visibility: visible;
 	}
 	.top-slider .table.active {
 		webkit-transform: scale(1);

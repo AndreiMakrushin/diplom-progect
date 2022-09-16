@@ -1,10 +1,12 @@
 const sendForm = ({ idForm }) => {
+    const modalCallback = document.querySelector('.modal-callback')
+    const modalOverlay = document.querySelector('.modal-overlay')
     const form = document.getElementById(idForm);
     const formElements = form.querySelectorAll('input')
     const statusBlock = document.createElement('div')
     const loadText = 'Загрузка...'
     const errorText = 'Ошибка'
-    const successText = 'Спасибо! Наш менеджер с вами свяжется!'
+    const successText = 'Данные успешно отправлены!'
 
     const sendData = (data) => {
         return fetch('https://jsonplaceholder.typicode.com/posts', {
@@ -34,11 +36,11 @@ const sendForm = ({ idForm }) => {
                     formElements.forEach(input => {
                         input.value = ''
                     })
-                    setTimeout(clear, 3000)
+                    setTimeout(clear, 2000)
                 }).catch(error => {
                     statusBlock.textContent = errorText
                 })
-                
+
         } else {
             alert('Данные не валидны!')
         }
@@ -48,29 +50,33 @@ const sendForm = ({ idForm }) => {
         if (!form) {
             throw new Error('Верните форму на место');
         }
-        
-            form.addEventListener('submit', (event)=>{
-                event.preventDefault();
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
             let count = 0;
-                formElements.forEach(el =>{
-                    if (el.type === 'tel' && el.value === '' || el.type === 'text' && el.value === '') {
-                        count++ 
-                    }
-                })
-                
-                if (count === 0) {
-                     submitForm();
-                 }
+            formElements.forEach(el => {
+                if (el.type === 'tel' && el.value === '' || el.type === 'text' && el.value === '') {
+                    count++
+                } else if (el.value.length < 3) {
+                    count++
+                }
             })
-            
-            
+
+            if (count === 0) {
+                submitForm();
+            }
+        })
+
+
     } catch (error) {
         console.log(error.message)
     }
-    const clear = () =>{
-        statusBlock.textContent = ''
+    const clear = () => {
+        statusBlock.textContent = '';
+        modalCallback.classList.remove('dblock')
+        modalOverlay.classList.remove('dblock')
     }
-    
+
 
 }
 export default sendForm
